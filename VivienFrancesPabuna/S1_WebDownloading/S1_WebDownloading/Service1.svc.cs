@@ -29,7 +29,7 @@ namespace Assignment1
         */
         public string getContent(string url)
         {
-            string html = String.Empty;
+            string html;
 
             int getIndexOfNthBracket(int n, string bracket, int start)
             {
@@ -43,14 +43,19 @@ namespace Assignment1
                 return start;
             }
 
-            WebRequest request = WebRequest.Create(url);
-            WebResponse response = request.GetResponse();
-            Stream data = response.GetResponseStream();
+            WebClient myWebClient = new WebClient();
+            byte[] myDataBuffer;
 
-            using (StreamReader sr = new StreamReader(data))
+            try
             {
-                html = sr.ReadToEnd();
+                myDataBuffer = myWebClient.DownloadData(url);
+            } catch (Exception ex)
+            {
+                return "Error: " + ex.Message;
             }
+            
+            System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding();
+            html = encoding.GetString(myDataBuffer);
 
             List<int> indices = new List<int>();
             List<string> titles = new List<string>();
@@ -64,39 +69,82 @@ namespace Assignment1
                     indices.Add(pos);
                     int start = getIndexOfNthBracket(2, ">", pos) + 1;
                     int length = getIndexOfNthBracket(2, "<", pos) - start;
-                    titles.Add(html.Substring(start, length));
+                    string substr = html.Substring(start, length);
+                    substr = System.Text.RegularExpressions.Regex.Replace(substr, @"\s+", " ");
+                    if (substr.Length > 0 && substr.Equals(" ") == false)
+                    {
+                        titles.Add(html.Substring(start, length));
+                    }
                 }
             } else
             {
                 while ((pos = html.IndexOf("<p", pos + 1)) != -1)
                 {
-                    count++;
-                    indices.Add(pos);
-                    int start = getIndexOfNthBracket(2, ">", pos) + 1;
-                    int length = getIndexOfNthBracket(2, "<", pos) - start;
-                    titles.Add(html.Substring(start, 200));
+                    try
+                    {
+                        count++;
+                        indices.Add(pos);
+                        int start = getIndexOfNthBracket(1, ">", pos) + 1;
+                        int length = getIndexOfNthBracket(1, "<", pos) - start;
+                        string substr = html.Substring(start, length);
+                        substr = System.Text.RegularExpressions.Regex.Replace(substr, @"\s+", " ");
+                        if (substr.Length > 0 && substr.Equals(" ") == false)
+                        {
+                            titles.Add(html.Substring(start, length));
+                        }
+                    }
+                    catch (Exception _) { }
                 }
-                while ((pos = html.IndexOf("<h1", pos + 1)) != -1)
+                while ((pos = html.IndexOf("<span", pos + 1)) != -1)
                 {
-                    count++;
-                    indices.Add(pos);
-                    int start = getIndexOfNthBracket(2, ">", pos) + 1;
-                    int length = getIndexOfNthBracket(2, "<", pos) - start;
-                    titles.Add(html.Substring(start, 200));
+                    try
+                    {
+                        count++;
+                        indices.Add(pos);
+                        int start = getIndexOfNthBracket(1, ">", pos) + 1;
+                        int length = getIndexOfNthBracket(1, "<", pos) - start;
+                        string substr = html.Substring(start, length);
+                        substr = System.Text.RegularExpressions.Regex.Replace(substr, @"\s+", " ");
+                        if (substr.Length > 0 && substr.Equals(" ") == false)
+                        {
+                            titles.Add(html.Substring(start, length));
+                        }
+                    }
+                    catch (Exception _) { }
                 }
-                while ((pos = html.IndexOf("<h2", pos + 1)) != -1)
+                while ((pos = html.IndexOf("<div", pos + 1)) != -1)
                 {
-                    count++;
-                    indices.Add(pos);
-                    int start = getIndexOfNthBracket(2, ">", pos) + 1;
-                    int length = getIndexOfNthBracket(2, "<", pos) - start;
-                    titles.Add(html.Substring(start, 200));
+                    try
+                    {
+                        count++;
+                        indices.Add(pos);
+                        int start = getIndexOfNthBracket(1, ">", pos) + 1;
+                        int length = getIndexOfNthBracket(1, "<", pos) - start;
+                        string substr = html.Substring(start, length);
+                        substr = System.Text.RegularExpressions.Regex.Replace(substr, @"\s+", " ");
+                        if (substr.Length > 0 && substr.Equals(" ") == false)
+                        {
+                            titles.Add(html.Substring(start, length));
+                        }
+                    }
+                    catch (Exception _) { }
                 }
             }
 
+            //for (int i = 0; i < titles.Count; i++)
+            //{
+            //    titles[i] = System.Text.RegularExpressions.Regex.Replace(titles[i], @"\s+", "\n");
+            //}
 
-
-            return string.Join("\n", titles.ToArray());
+            string result = string.Join("\n", titles.ToArray());
+            if (result.Length > 0 && result.Equals(" ") == false)
+            {
+                return result;
+            } else
+            {
+                return "No content (within the p, span, or div tags) was found on the page";
+            }
+            
         }
 
     }

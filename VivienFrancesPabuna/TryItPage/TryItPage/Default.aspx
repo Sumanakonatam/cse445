@@ -1,10 +1,17 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Part4._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Part4._Default" ValidateRequest="false" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
         <h1 id="TitleLabel">#1 WebDownloading</h1>
-        <p class="lead">The pre-selected link for our vending machine system's use-case has been entered below.<br />However, for demo purposes, you may also enter your own website instead.</p>
+        <p class="lead">The pre-selected link for our vending machine system's use-case has been entered below.<br />However, for demo purposes, you may also enter your own website instead. <br /><br />Please note that not all websites will store content information within within p, span, or div tags<br />(which this service extracts from in all other websites)<br /></p>
+        <h6>Good examples:</h6>
+        <ul>
+            <li>https://en.wikipedia.org/wiki/Vending_machine</li>
+            <li>https://news.asu.edu/20221013-solutions-asu-students-come-app-idea-help-caregivers</li>
+            <li>https://admission.asu.edu/coronavirus-faqs</li>
+        </ul>
+        <br />
         <p>
             <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged" style="min-width: 800px" Rows="10" TextMode="MultiLine">https://innercircle.engineering.asu.edu/</asp:TextBox>
         </p>
