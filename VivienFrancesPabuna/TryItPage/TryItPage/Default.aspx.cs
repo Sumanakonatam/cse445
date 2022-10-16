@@ -37,10 +37,10 @@ namespace Part4
         protected void Button2_Click(object sender, EventArgs e)
         {
             ServiceReference2.Service1Client prox = new ServiceReference2.Service1Client();
-            string unsorted = this.TextBox1.Text;
-            string sorted = prox.getContent(unsorted);
+            string url = this.TextBox1.Text;
+            string content = prox.getContent(url);
             // Specifically denote that the result is displayed to avoid confusion.
-            this.ResultLabel.Text = "Result: " + sorted;
+            this.ResultLabel.Text = content;
         }
 
         // Placeholder method.

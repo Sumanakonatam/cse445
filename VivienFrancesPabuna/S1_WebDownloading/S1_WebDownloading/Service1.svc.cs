@@ -29,11 +29,24 @@ namespace Assignment1
         */
         public string getContent(string url)
         {
+            string html = String.Empty;
+
+            int getIndexOfNthBracket(int n, string bracket, int start)
+            {
+                string substr = html.Substring(start, 500);
+                int _pos = 0, _count = 0;
+                while ((_pos = substr.IndexOf(bracket, _pos + 1)) != -1)
+                {
+                    _count++;
+                    if (_count == n) return (start + _pos);
+                }
+                return start;
+            }
+
             WebRequest request = WebRequest.Create(url);
             WebResponse response = request.GetResponse();
             Stream data = response.GetResponseStream();
 
-            string html = String.Empty;
             using (StreamReader sr = new StreamReader(data))
             {
                 html = sr.ReadToEnd();
@@ -47,10 +60,12 @@ namespace Assignment1
             {
                 count++;
                 indices.Add(pos);
-                titles.Add(html.Substring(pos, 200));
+                int start = getIndexOfNthBracket(2, ">", pos) + 1;
+                int length = getIndexOfNthBracket(2, "<", pos) - start;
+                titles.Add(html.Substring(start, length));
             }
 
-            return count.ToString() + " - " + string.Join(" ,", titles.ToArray());
+            return string.Join("\n", titles.ToArray());
         }
 
     }
