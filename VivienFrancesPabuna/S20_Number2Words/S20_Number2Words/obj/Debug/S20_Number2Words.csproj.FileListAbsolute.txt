@@ -1,0 +1,7 @@
+C:\Users\iViFi\Desktop\cse445\VivienFrancesPabuna\S20_Number2Words\S20_Number2Words\bin\Assignment1.dll.config
+C:\Users\iViFi\Desktop\cse445\VivienFrancesPabuna\S20_Number2Words\S20_Number2Words\bin\Assignment1.dll
+C:\Users\iViFi\Desktop\cse445\VivienFrancesPabuna\S20_Number2Words\S20_Number2Words\bin\Assignment1.pdb
+C:\Users\iViFi\Desktop\cse445\VivienFrancesPabuna\S20_Number2Words\S20_Number2Words\obj\Debug\S20_Number2Words.csproj.AssemblyReference.cache
+C:\Users\iViFi\Desktop\cse445\VivienFrancesPabuna\S20_Number2Words\S20_Number2Words\obj\Debug\S20_Number2Words.csproj.CoreCompileInputs.cache
+C:\Users\iViFi\Desktop\cse445\VivienFrancesPabuna\S20_Number2Words\S20_Number2Words\obj\Debug\Assignment1.dll
+C:\Users\iViFi\Desktop\cse445\VivienFrancesPabuna\S20_Number2Words\S20_Number2Words\obj\Debug\Assignment1.pdb

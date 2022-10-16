@@ -1,0 +1,7 @@
+C:\Users\iViFi\Desktop\cse445\proj3\cse445\VivienFrancesPabuna\S1_WebDownloading\S1_WebDownloading\bin\Assignment1.dll.config
+C:\Users\iViFi\Desktop\cse445\proj3\cse445\VivienFrancesPabuna\S1_WebDownloading\S1_WebDownloading\bin\Assignment1.dll
+C:\Users\iViFi\Desktop\cse445\proj3\cse445\VivienFrancesPabuna\S1_WebDownloading\S1_WebDownloading\bin\Assignment1.pdb
+C:\Users\iViFi\Desktop\cse445\proj3\cse445\VivienFrancesPabuna\S1_WebDownloading\S1_WebDownloading\obj\Debug\S1_WebDownloading.csproj.AssemblyReference.cache
+C:\Users\iViFi\Desktop\cse445\proj3\cse445\VivienFrancesPabuna\S1_WebDownloading\S1_WebDownloading\obj\Debug\S1_WebDownloading.csproj.CoreCompileInputs.cache
+C:\Users\iViFi\Desktop\cse445\proj3\cse445\VivienFrancesPabuna\S1_WebDownloading\S1_WebDownloading\obj\Debug\Assignment1.dll
+C:\Users\iViFi\Desktop\cse445\proj3\cse445\VivienFrancesPabuna\S1_WebDownloading\S1_WebDownloading\obj\Debug\Assignment1.pdb
