@@ -55,15 +55,46 @@ namespace Assignment1
             List<int> indices = new List<int>();
             List<string> titles = new List<string>();
             int pos = -1, count = 0;
-
-            while ((pos = html.IndexOf("main_title", pos + 1)) != -1)
+            string keyword = "main_title";
+            if (url.Equals("https://innercircle.engineering.asu.edu/") == true)
             {
-                count++;
-                indices.Add(pos);
-                int start = getIndexOfNthBracket(2, ">", pos) + 1;
-                int length = getIndexOfNthBracket(2, "<", pos) - start;
-                titles.Add(html.Substring(start, length));
+                while ((pos = html.IndexOf(keyword, pos + 1)) != -1)
+                {
+                    count++;
+                    indices.Add(pos);
+                    int start = getIndexOfNthBracket(2, ">", pos) + 1;
+                    int length = getIndexOfNthBracket(2, "<", pos) - start;
+                    titles.Add(html.Substring(start, length));
+                }
+            } else
+            {
+                while ((pos = html.IndexOf("<p", pos + 1)) != -1)
+                {
+                    count++;
+                    indices.Add(pos);
+                    int start = getIndexOfNthBracket(2, ">", pos) + 1;
+                    int length = getIndexOfNthBracket(2, "<", pos) - start;
+                    titles.Add(html.Substring(start, 200));
+                }
+                while ((pos = html.IndexOf("<h1", pos + 1)) != -1)
+                {
+                    count++;
+                    indices.Add(pos);
+                    int start = getIndexOfNthBracket(2, ">", pos) + 1;
+                    int length = getIndexOfNthBracket(2, "<", pos) - start;
+                    titles.Add(html.Substring(start, 200));
+                }
+                while ((pos = html.IndexOf("<h2", pos + 1)) != -1)
+                {
+                    count++;
+                    indices.Add(pos);
+                    int start = getIndexOfNthBracket(2, ">", pos) + 1;
+                    int length = getIndexOfNthBracket(2, "<", pos) - start;
+                    titles.Add(html.Substring(start, 200));
+                }
             }
+
+
 
             return string.Join("\n", titles.ToArray());
         }
