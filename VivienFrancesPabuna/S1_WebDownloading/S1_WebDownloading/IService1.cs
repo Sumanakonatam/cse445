@@ -14,22 +14,10 @@ namespace Assignment1
     {
 
         /*
-            Interface for celsius to fahrenheit temp converter method.
+            Interface for the method to get content at the given URL.
         */
         [OperationContract]
-        int c2f(int originalTemp);
-
-        /*
-            Interface for fahrenheit to celsius temp converter method.
-        */
-        [OperationContract]
-        int f2c(int originalTemp);
-
-        /*
-            Interface for number string sorter method.
-        */
-        [OperationContract]
-        string sort(string s);
+        string getContent(string url);
 
     }
 }

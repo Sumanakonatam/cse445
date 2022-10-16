@@ -1,10 +1,18 @@
 ﻿using System;
-using System.Text.RegularExpressions;
+using System.Net;
+using System.Xml.Linq;
+using System.Xml;
+using System.IO;
+using System.Text;
+using System.Collections.Generic;
+using System.Xml.XPath;
+using System.Linq;
+
 
 /*
     Vivien Frances Pabuna
     CSE 445 - Dr. Yinong Chen
-    Fall 2022, 09/04/2022
+    Fall 2022, 10/16/2022
     Assignment 1, Parts 1-2
 */
 
@@ -14,75 +22,54 @@ namespace Assignment1
     {
 
         /*
-            This method converts temperature values in celsius to fahrenheit.
+            This method downloads the content at a given url and returns the first 20 characters.
 
-            Parameter: int originalTemp - temperature in celsius
-            Returns: int - temperature in fahrenheit
+            Parameter: string url - website to download content from
+            Returns: string - content at URL
         */
-        public int c2f(int originalTemp)
+        public string getContent(string url)
         {
-            return Convert.ToInt32((originalTemp * (9.0 / 5.0)) + 32.0);
-        }
+            //url = "https://venus.sod.asu.edu/WSRepository/Services/RandomString/Service.svc/GetRandomString/20";
+            string remoteUri = url;
+            Uri ServivrUri = new Uri(url);
+            //WebClient proxy = new WebClient();
+            //byte[] abc = proxy.DownloadData(ServivrUri);
+            //System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding();
+            //string str = encoding.GetString(abc);
+            //XElement xmlroot = XElement.Parse(str);
+            //string txtContent = ((XElement)(xmlroot)).Value;
+            //return txtContent;
+            // Create a new WebClient instance.
+            WebClient myWebClient = new WebClient();
+            // Download home page data.
+            // Download the Web resource and save it into a data buffer.
+            byte[] myDataBuffer = myWebClient.DownloadData(remoteUri);
+            System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding();
+            // Display the downloaded data.
+            string str = encoding.GetString(myDataBuffer);
 
-        /*
-            This method converts temperature values in fahrenheit to celsius.
-
-            Parameter: int originalTemp - temperature in fahrenheit
-            Returns: int - temperature in celsius
-        */
-        public int f2c(int originalTemp)
-        {
-            return Convert.ToInt32((originalTemp - 32.0) * (5.0 / 9.0));
-        }
-
-        /*
-            This method sorts a string of numbers, given that each of the numbers
-                are separated by a comma. After the strings are each an element of the array,
-                they are converted into doubles, and a new array is created. They are sorted
-                in ascending order using the `Array.Sort` method, and formatted back into a
-                unified string with commas.
-            
-            Parameter: string s - string consisting of numbers and commas
-            Returns: string - same set of numbers in s, but sorted in ascending order
-        */
-        public string sort(string s)
-        {
-            try
+            WebRequest request = WebRequest.Create(url);
+            WebResponse response = request.GetResponse();
+            Stream data = response.GetResponseStream();
+            string html = String.Empty;
+            using (StreamReader sr = new StreamReader(data))
             {
-                if (s == null) return "";
-                // Remove a possible trailing comma to prevent errors.
-                s = s.TrimEnd(',');
-                // Remove all whitespite to prevent errors.
-                string noWhitespace = Regex.Replace(s, @"\s+", string.Empty);
-
-                string[] splitS = noWhitespace.Split(',');
-                double[] doubleS = new double[splitS.Length];
-                string result = "";
-
-                for (int i = 0; i < splitS.Length; i++)
-                {
-                    // Convert each string into an double value.
-                    doubleS[i] = Convert.ToDouble(splitS[i]);
-                }
-
-                // Sort the doubles in ascending order using a built-in method.
-                Array.Sort(doubleS);
-
-                for (int i = 0; i < doubleS.Length; i++)
-                {
-                    if (i != 0)
-                    {
-                        result = result + ",";
-                    }
-                    result = result + doubleS[i].ToString();
-                }
-
-                return result;
+                html = sr.ReadToEnd();
             }
-            catch (Exception)
+
+            List<int> indices = new List<int>();
+            List<string> titles = new List<string>();
+            int pos = -1, count = 0;
+
+            while ((pos = html.IndexOf("main_title", pos + 1)) != -1)
             {
-                return "ERROR: please enter valid numbers only";
+                count++;
+                indices.Add(pos);
+                titles.Add(html.Substring(pos, 200));
             }
+
+            return count.ToString() + " - " + string.Join(" ,", titles.ToArray());
         }
+
     }
 }
