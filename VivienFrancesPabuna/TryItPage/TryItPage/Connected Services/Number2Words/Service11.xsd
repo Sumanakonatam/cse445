@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="getContent">
+  <xs:element name="number2Words">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="num" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getContentResponse">
+  <xs:element name="number2WordsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="getContentResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="number2WordsResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

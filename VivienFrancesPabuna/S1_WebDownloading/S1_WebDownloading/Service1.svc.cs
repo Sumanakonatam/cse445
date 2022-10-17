@@ -131,11 +131,6 @@ namespace Assignment1
                 }
             }
 
-            //for (int i = 0; i < titles.Count; i++)
-            //{
-            //    titles[i] = System.Text.RegularExpressions.Regex.Replace(titles[i], @"\s+", "\n");
-            //}
-
             string result = string.Join("\n", titles.ToArray());
             if (result.Length > 0 && result.Equals(" ") == false)
             {

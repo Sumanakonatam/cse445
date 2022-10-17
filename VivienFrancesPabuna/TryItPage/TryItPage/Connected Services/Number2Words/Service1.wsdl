@@ -6,22 +6,22 @@
       <xsd:import schemaLocation="http://localhost:54503/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_getContent_InputMessage">
-    <wsdl:part name="parameters" element="tns:getContent" />
+  <wsdl:message name="IService1_number2Words_InputMessage">
+    <wsdl:part name="parameters" element="tns:number2Words" />
   </wsdl:message>
-  <wsdl:message name="IService1_getContent_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getContentResponse" />
+  <wsdl:message name="IService1_number2Words_OutputMessage">
+    <wsdl:part name="parameters" element="tns:number2WordsResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="getContent">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getContent" message="tns:IService1_getContent_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getContentResponse" message="tns:IService1_getContent_OutputMessage" />
+    <wsdl:operation name="number2Words">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/number2Words" message="tns:IService1_number2Words_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/number2WordsResponse" message="tns:IService1_number2Words_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="getContent">
-      <soap:operation soapAction="http://tempuri.org/IService1/getContent" style="document" />
+    <wsdl:operation name="number2Words">
+      <soap:operation soapAction="http://tempuri.org/IService1/number2Words" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

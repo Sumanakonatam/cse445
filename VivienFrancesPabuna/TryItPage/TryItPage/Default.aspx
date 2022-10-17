@@ -13,30 +13,26 @@
         </ul>
         <br />
         <p>
-            <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged" style="min-width: 800px" Rows="2" TextMode="MultiLine">https://innercircle.engineering.asu.edu/</asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged" style="min-width: 800px" Rows="1" TextMode="MultiLine">https://innercircle.engineering.asu.edu/</asp:TextBox>
         </p>
         <p>
             <asp:Button ID="SortButton" runat="server" OnClick="Button2_Click" Text="Download" />
         </p>
-        <p>
-            &nbsp;</p>
         <p>&nbsp;<asp:TextBox ID="ResultLabel" runat="server" BackColor="#D7D7D7" OnTextChanged="TextBox2_TextChanged" ReadOnly="True" style="min-width: 800px" Rows="10" TextMode="MultiLine"></asp:TextBox>
         </p>
     </div>
 
     <div class="jumbotron">
         <h1 id="TitleLabel1">#20 Number2Words</h1>
-        <h5>Enter a number from 1 to 40.</h5>
+        <h5>Enter a number from 1 to 30.</h5>
         <br />
         <p>
-            <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox1_TextChanged" style="min-width: 800px" Rows="2" TextMode="MultiLine">0</asp:TextBox>
+            <asp:TextBox ID="NumberBox" runat="server" OnTextChanged="TextBox1_TextChanged" style="min-width: 800px" Rows="1" TextMode="MultiLine">0</asp:TextBox>
         </p>
         <p>
-            <asp:Button ID="Button1" runat="server" OnClick="Button2_Click" Text="Convert" />
+            <asp:Button ID="ConvertButton" runat="server" OnClick="ConvertButton_Click" Text="Convert" />
         </p>
-        <p>
-            &nbsp;</p>
-        <p>&nbsp;<asp:TextBox ID="TextBox3" runat="server" BackColor="#D7D7D7" OnTextChanged="TextBox2_TextChanged" ReadOnly="True" style="min-width: 800px" Rows="10" TextMode="MultiLine"></asp:TextBox>
+        <p>&nbsp;<asp:TextBox ID="WordsBox" runat="server" BackColor="#D7D7D7" OnTextChanged="TextBox2_TextChanged" ReadOnly="True" style="min-width: 800px" Rows="10" TextMode="MultiLine"></asp:TextBox>
         </p>
     </div>
 

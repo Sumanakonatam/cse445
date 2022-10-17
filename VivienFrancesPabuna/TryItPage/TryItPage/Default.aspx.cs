@@ -43,6 +43,23 @@ namespace Part4
             this.ResultLabel.Text = content;
         }
 
+        protected void ConvertButton_Click(object sender, EventArgs e)
+        {
+            Number2Words.Service1Client prox = new Number2Words.Service1Client();
+            int num;
+
+            try
+            {
+                num = Int32.Parse(this.NumberBox.Text);
+                string words = prox.number2Words(num);
+                this.WordsBox.Text = words;
+            } catch (Exception ex)
+            {
+                this.WordsBox.Text = "Error: " + ex.Message;
+            }
+            
+        }
+
         // Placeholder method.
         protected void TextBox2_TextChanged(object sender, EventArgs e)
         {

@@ -8,27 +8,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Part4.ServiceReference2 {
+namespace Part4.Number2Words {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Number2Words.IService1")]
     public interface IService1 {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getContent", ReplyAction="http://tempuri.org/IService1/getContentResponse")]
-        string getContent(string url);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/number2Words", ReplyAction="http://tempuri.org/IService1/number2WordsResponse")]
+        string number2Words(int num);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getContent", ReplyAction="http://tempuri.org/IService1/getContentResponse")]
-        System.Threading.Tasks.Task<string> getContentAsync(string url);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/number2Words", ReplyAction="http://tempuri.org/IService1/number2WordsResponse")]
+        System.Threading.Tasks.Task<string> number2WordsAsync(int num);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : Part4.ServiceReference2.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : Part4.Number2Words.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<Part4.ServiceReference2.IService1>, Part4.ServiceReference2.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<Part4.Number2Words.IService1>, Part4.Number2Words.IService1 {
         
         public Service1Client() {
         }
@@ -49,12 +49,12 @@ namespace Part4.ServiceReference2 {
                 base(binding, remoteAddress) {
         }
         
-        public string getContent(string url) {
-            return base.Channel.getContent(url);
+        public string number2Words(int num) {
+            return base.Channel.number2Words(num);
         }
         
-        public System.Threading.Tasks.Task<string> getContentAsync(string url) {
-            return base.Channel.getContentAsync(url);
+        public System.Threading.Tasks.Task<string> number2WordsAsync(int num) {
+            return base.Channel.number2WordsAsync(num);
         }
     }
 }

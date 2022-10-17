@@ -42,30 +42,30 @@ namespace Part4
         protected global::System.Web.UI.WebControls.TextBox ResultLabel;
 
         /// <summary>
-        /// TextBox2 control.
+        /// NumberBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox NumberBox;
 
         /// <summary>
-        /// Button1 control.
+        /// ConvertButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button ConvertButton;
 
         /// <summary>
-        /// TextBox3 control.
+        /// WordsBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox WordsBox;
     }
 }
