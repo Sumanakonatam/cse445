@@ -8,8 +8,8 @@ using System.Web.UI.WebControls;
 /*
     Vivien Frances Pabuna
     CSE 445 - Dr. Yinong Chen
-    Fall 2022, 09/04/2022
-    Assignment 1, Part 4
+    Fall 2022, 10/16/2022
+    Assignment 5
 */
 
 namespace Part4
@@ -29,23 +29,28 @@ namespace Part4
         }
 
         /*
-            This method handles the event in which the user clicks the `Sort` button.
-            The input is passed directly into the sort service (as the service itself
+            This method handles the event in which the user clicks the `Download` button.
+            The input is passed directly into the getContent service (as the service itself
                 handles the error catching), and the result is displayed in the text
                 box below.
         */
         protected void Button2_Click(object sender, EventArgs e)
         {
-            ServiceReference2.Service1Client prox = new ServiceReference2.Service1Client();
+            ServiceReference1.Service1Client prox = new ServiceReference1.Service1Client();
             string url = this.TextBox1.Text;
             string content = prox.getContent(url);
             // Specifically denote that the result is displayed to avoid confusion.
             this.ResultLabel.Text = content;
         }
 
+        /*
+            This method handles the event in which the user clicks the `Convert` button.
+            Ensure that the input is in the correct number format, and print the result
+                in the textbox below it.
+        */
         protected void ConvertButton_Click(object sender, EventArgs e)
         {
-            Number2Words.Service1Client prox = new Number2Words.Service1Client();
+            ServiceReference1.Service1Client prox = new ServiceReference1.Service1Client();
             int num;
 
             try

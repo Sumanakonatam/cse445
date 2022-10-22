@@ -48,6 +48,15 @@
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">Vivien Frances Pabuna</a>
                 </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/WebDownloading">WebDownloading</a></li>
+                        <li><a runat="server" href="~/Number2Words">Number2Words</a></li>
+                        <li><a runat="server" href="~/ItemStorage">ItemStorage</a></li>
+                        <li><a runat="server" href="~/NutritionalInfo">NutritionalInfo</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="container body-content">
