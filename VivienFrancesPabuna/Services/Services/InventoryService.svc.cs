@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
@@ -13,7 +14,10 @@ namespace Services
     {
         public string GetLatestQuantities()
         {
-            return "";
+            WebClient client = new WebClient();
+            string currentVersion = client.DownloadString("http://webstrar31.fulton.asu.edu/page5/currentVersion.txt");
+            string quantities = client.DownloadString("http://webstrar31.fulton.asu.edu/page5/quantitySnapshots/inv"+currentVersion+".txt");
+            return quantities;
         }
 
         public bool UpdateQuantities(string data)
