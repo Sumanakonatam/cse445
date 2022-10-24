@@ -11,8 +11,24 @@ namespace Services
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service2.svc or Service2.svc.cs at the Solution Explorer and start debugging.
     public class InventoryService : InvService
     {
-        public void DoWork()
+        public string GetLatestQuantities()
         {
+            return "";
+        }
+
+        public bool UpdateQuantities(string data)
+        {
+            return false;
+        }
+
+        public bool DecrementItemQuantity(int itemNum, int amt)
+        {
+            return false;
+        }
+
+        public bool IncrementItemQuantity(int itemNum, int amt)
+        {
+            return false;
         }
     }
 }

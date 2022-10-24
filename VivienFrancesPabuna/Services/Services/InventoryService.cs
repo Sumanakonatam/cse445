@@ -12,6 +12,15 @@ namespace Services
     public interface InvService
     {
         [OperationContract]
-        void DoWork();
+        string GetLatestQuantities();
+
+        [OperationContract]
+        bool UpdateQuantities(string data);
+
+        [OperationContract]
+        bool DecrementItemQuantity(int itemNum, int amt);
+
+        [OperationContract]
+        bool IncrementItemQuantity(int itemNum, int amt);
     }
 }
