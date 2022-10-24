@@ -29,9 +29,9 @@ namespace Part4
         */
         protected void Button2_Click(object sender, EventArgs e)
         {
-            ServiceReference1.Service1Client prox = new ServiceReference1.Service1Client();
-            string url = this.TextBox1.Text;
-            string content = "Not yet implemented.";
+            InventoryService.InvService prox = new InventoryService.InvServiceClient();
+            string input = this.TextBox1.Text;
+            string content = prox.DecrementItemQuantity(20, 3);
             // Specifically denote that the result is displayed to avoid confusion.
             this.ResultLabel.Text = content;
         }

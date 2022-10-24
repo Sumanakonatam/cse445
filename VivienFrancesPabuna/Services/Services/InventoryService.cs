@@ -18,9 +18,9 @@ namespace Services
         bool UpdateQuantities(string data);
 
         [OperationContract]
-        bool DecrementItemQuantity(int itemNum, int amt);
+        string DecrementItemQuantity(int itemNum, int amt);
 
         [OperationContract]
-        bool IncrementItemQuantity(int itemNum, int amt);
+        string IncrementItemQuantity(int itemNum, int amt);
     }
 }

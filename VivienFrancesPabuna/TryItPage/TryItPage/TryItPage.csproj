@@ -107,9 +107,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\InventoryService\InventoryService.disco" />
+    <None Include="Connected Services\InventoryService\configuration91.svcinfo" />
+    <None Include="Connected Services\InventoryService\configuration.svcinfo" />
+    <None Include="Connected Services\InventoryService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Number2Words.aspx" />
     <Content Include="NutritionalInfo.aspx" />
     <Content Include="WebDownloading.aspx" />
+    <None Include="Connected Services\InventoryService\InventoryService.wsdl" />
+    <None Include="Connected Services\InventoryService\InventoryService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\InventoryService\InventoryService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiceReference1\Service1.disco" />
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
@@ -179,6 +193,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Connected Services\InventoryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Number2Words.aspx.cs">
       <DependentUpon>Number2Words.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -264,6 +283,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\InventoryService\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
   </ItemGroup>
   <PropertyGroup>
