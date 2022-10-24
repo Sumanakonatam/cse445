@@ -34,10 +34,10 @@ namespace Part4.InventoryService {
         System.Threading.Tasks.Task<string> DecrementItemQuantityAsync(int itemNum, int amt);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InvService/IncrementItemQuantity", ReplyAction="http://tempuri.org/InvService/IncrementItemQuantityResponse")]
-        bool IncrementItemQuantity(int itemNum, int amt);
+        string IncrementItemQuantity(int itemNum, int amt);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InvService/IncrementItemQuantity", ReplyAction="http://tempuri.org/InvService/IncrementItemQuantityResponse")]
-        System.Threading.Tasks.Task<bool> IncrementItemQuantityAsync(int itemNum, int amt);
+        System.Threading.Tasks.Task<string> IncrementItemQuantityAsync(int itemNum, int amt);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -91,11 +91,11 @@ namespace Part4.InventoryService {
             return base.Channel.DecrementItemQuantityAsync(itemNum, amt);
         }
         
-        public bool IncrementItemQuantity(int itemNum, int amt) {
+        public string IncrementItemQuantity(int itemNum, int amt) {
             return base.Channel.IncrementItemQuantity(itemNum, amt);
         }
         
-        public System.Threading.Tasks.Task<bool> IncrementItemQuantityAsync(int itemNum, int amt) {
+        public System.Threading.Tasks.Task<string> IncrementItemQuantityAsync(int itemNum, int amt) {
             return base.Channel.IncrementItemQuantityAsync(itemNum, amt);
         }
     }

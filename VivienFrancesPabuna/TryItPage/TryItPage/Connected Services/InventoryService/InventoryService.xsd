@@ -52,7 +52,7 @@
   <xs:element name="IncrementItemQuantityResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="IncrementItemQuantityResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="IncrementItemQuantityResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

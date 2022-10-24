@@ -17,12 +17,12 @@ namespace Services
         public string GetLatestQuantities()
         {
             WebClient client = new WebClient();
-            string currentVersion = client.DownloadString("http://webstrar31.fulton.asu.edu/page5/currentVersion.txt");
-            string quantities = client.DownloadString("http://webstrar31.fulton.asu.edu/page5/quantitySnapshots/inv"+currentVersion+".txt");
+            string currentVersion = client.DownloadString("http://webstrar31.fulton.asu.edu/page4/Inventory/currentVersion.txt");
+            string quantities = client.DownloadString("http://webstrar31.fulton.asu.edu/page4/Inventory/quantitySnapshots/inv" + currentVersion+".txt");
             return quantities;
         }
 
-        public bool UpdateQuantities(string data)
+        public string UpdateQuantities(string data)
         {
             //try
             //{
@@ -33,20 +33,21 @@ namespace Services
 
                 if (quantities.Length < 20 || quantities.Length > 20)
                 {
-                    Console.WriteLine("Incorrect length");
-                    return false;
+                    return "Error: incorrect length of item quantities (must be 20 total)";
                 } else
                 {
                     WebClient client = new WebClient();
-                    string currentVersion = client.DownloadString("http://webstrar31.fulton.asu.edu/page5/currentVersion.txt");
+                    string currentVersion = client.DownloadString("http://webstrar31.fulton.asu.edu/page4/Inventory/currentVersion.txt");
                     string newVersion = (Int32.Parse(currentVersion) + 1).ToString();
-                    string fLocation = Path.Combine(HttpRuntime.AppDomainAppPath, @"App_Data"); // From server root to current
-                    fLocation = Path.Combine(fLocation, newVersion + ".txt"); // From current to App_Data
-                    //File.WriteAllText("http://webstrar31.fulton.asu.edu/page5/quantitySnapshots/inv" + newVersion + ".txt", data);
-                    //File.WriteAllText("http://webstrar31.fulton.asu.edu/page5/currentVersion.txt", newVersion);
-                    //File.WriteAllText(fLocation, data);
-                    File.WriteAllText("http://webstrar31.fulton.asu.edu/page5/currentVersion.txt", newVersion);
-                    return true;
+                    string snapLoc = Path.Combine(HttpRuntime.AppDomainAppPath, @"Inventory"); // From server root to current
+                    snapLoc = Path.Combine(snapLoc, "quantitySnapshots");
+                    snapLoc = Path.Combine(snapLoc, "inv" + newVersion + ".txt"); // From current to App_Data
+                    File.WriteAllText(snapLoc, data);
+
+                    string verLoc = Path.Combine(HttpRuntime.AppDomainAppPath, @"Inventory"); // From server root to current
+                    verLoc = Path.Combine(verLoc, "currentVersion.txt"); // From current to App_Data
+                    File.WriteAllText(verLoc, newVersion);
+                    return "http://webstrar31.fulton.asu.edu/page4/Inventory/quantitySnapshots/" + "inv" + newVersion + ".txt";
                 }
 
             //}

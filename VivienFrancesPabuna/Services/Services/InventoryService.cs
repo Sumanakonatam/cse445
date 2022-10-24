@@ -15,7 +15,7 @@ namespace Services
         string GetLatestQuantities();
 
         [OperationContract]
-        bool UpdateQuantities(string data);
+        string UpdateQuantities(string data);
 
         [OperationContract]
         string DecrementItemQuantity(int itemNum, int amt);

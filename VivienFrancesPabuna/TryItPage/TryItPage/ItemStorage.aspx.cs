@@ -31,7 +31,7 @@ namespace Part4
         {
             InventoryService.InvService prox = new InventoryService.InvServiceClient();
             string input = this.TextBox1.Text;
-            string content = prox.DecrementItemQuantity(20, 3);
+            string content = prox.UpdateQuantities(input);
             // Specifically denote that the result is displayed to avoid confusion.
             this.ResultLabel.Text = content;
         }
