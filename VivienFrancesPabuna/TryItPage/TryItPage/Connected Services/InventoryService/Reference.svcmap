@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:54503/InventoryService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://webstrar31.fulton.asu.edu/Page4/InventoryService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="InventoryService.wsdl" MetadataType="Wsdl" ID="9ed92025-fa71-481b-82e8-dc76fbe96112" SourceId="1" SourceUrl="http://localhost:54503/InventoryService.svc?wsdl" />
-    <MetadataFile FileName="InventoryService.xsd" MetadataType="Schema" ID="261cb862-159e-4086-b7eb-4f89c9200a6f" SourceId="1" SourceUrl="http://localhost:54503/InventoryService.svc?xsd=xsd0" />
-    <MetadataFile FileName="InventoryService1.xsd" MetadataType="Schema" ID="8ad36f3d-2515-46c4-8c8d-d7f04cb25e63" SourceId="1" SourceUrl="http://localhost:54503/InventoryService.svc?xsd=xsd1" />
-    <MetadataFile FileName="InventoryService.disco" MetadataType="Disco" ID="2462bc94-5cb8-4261-a31a-80581168e2ae" SourceId="1" SourceUrl="http://localhost:54503/InventoryService.svc?disco" />
+    <MetadataFile FileName="InventoryService1.wsdl" MetadataType="Wsdl" ID="5201eaf8-d20b-4560-8fd9-f1825417e04c" SourceId="1" SourceUrl="http://webstrar31.fulton.asu.edu/Page4/InventoryService.svc?wsdl" />
+    <MetadataFile FileName="InventoryService2.xsd" MetadataType="Schema" ID="ca1c8dde-840a-47c4-925b-3ba9b0167b9a" SourceId="1" SourceUrl="http://webstrar31.fulton.asu.edu/Page4/InventoryService.svc?xsd=xsd0" />
+    <MetadataFile FileName="InventoryService1.disco" MetadataType="Disco" ID="0556771c-9856-44aa-a96d-2cc3ef633c18" SourceId="1" SourceUrl="http://webstrar31.fulton.asu.edu/Page4/InventoryService.svc?disco" />
+    <MetadataFile FileName="InventoryService21.xsd" MetadataType="Schema" ID="e457a172-6fc8-471b-bc29-63d2bed4e52b" SourceId="1" SourceUrl="http://webstrar31.fulton.asu.edu/Page4/InventoryService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

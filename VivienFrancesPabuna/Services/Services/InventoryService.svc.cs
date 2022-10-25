@@ -33,7 +33,7 @@ namespace Services
 
                 if (quantities.Length < 20 || quantities.Length > 20)
                 {
-                    return "Error: incorrect length of item quantities (must be 20 total)";
+                    return "Error: incorrect length of item quantities - expected 20 but got " + quantities.Length;
                 } else
                 {
                     WebClient client = new WebClient();

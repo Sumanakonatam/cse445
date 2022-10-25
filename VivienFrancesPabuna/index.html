@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    <table border=2 width="100%">
+        <thead>
+            <tr>
+                <th>
+                    Service Directory: <span style="font-weight: normal;">The team has completed the following services.</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    The service directory will be deployed at this address: <a href="http://webstrar31.fulton.asu.edu/index.html">http://webstrar31.fulton.asu.edu/index.html</a>
+                </td>
+            </tr>
+            <tr>
+                <td>This project is developed by: Jaylynne Jarrett and Vivien Frances Pabuna</td>
+            </tr>
+        </tbody>
+    </table>
+    <table border=2>
+        <thead>
+            <tr>
+                <th>Provider name</th>
+                <th>Service name</th>
+                <th>Service description</th>
+                <th>TryIt link</th>
+                <th>Resources used</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Vivien Frances Pabuna</td>
+                <td>
+                    <u>#1: WebDownloading (R)</u>
+                    <br />Input: a webpage url in string <br />Output: A string of the content at the given URL
+                </td>
+                <td> Allows the vending machine to act as a “bulletin board” board for organizations, such as schools. In our implementation, we will be catering to ASU students on campus.
+                <td>
+                    <a href="http://webstrar31.fulton.asu.edu/page3/WebDownloading">http://webstrar31.fulton.asu.edu/page3/WebDownloading</a>
+                </td>
+                <td>
+                    The .NET <u>WebClient.DownloadData()</u> method and the ASU Inner Circle homepage will be used for this implementation. <br />
+                    <br />
+                    <a href="https://innercircle.engineering.asu.edu/">
+                        <span>https://innercircle.engineering.asu.edu/</span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Vivien Frances Pabuna</span>
+                </td>
+                <td>
+                    <u>#20: Number2Words (R) </u>
+                    <br>Input: a string of digits <br />Output: a corresponding easy-to-remember string
+                </td>
+                <td>
+                    <span>
+                        <span>Maps a number that the user can easily enter into the num pad with the corresponding vending machine item.</span>
+                    </span>
+                </td>
+                <td>
+                    <a href="http://webstrar31.fulton.asu.edu/page3/Number2Words">http://webstrar31.fulton.asu.edu/page3/Number2Words</a>
+                </td>
+                <td>
+                    <span>
+                        <span>I will be writing my own code to implement this service.</span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Vivien Frances Pabuna</td>
+                <td>
+                    <u>Item Storage service (E)</u>
+                    <br>Input: file name with local path <br />Output: URL of the file in the server
+                </td>
+                <td>
+                    <span>
+                        <span>Keeps track of vending machine item stock, updating with every purchase.</span>
+                    </span>
+                </td>
+                <td>
+                    <a href="http://webstrar31.fulton.asu.edu/page3/ItemStorage">http://webstrar31.fulton.asu.edu/page3/ItemStorage</a>
+                </td>
+                <td> I will be using the .NET <u>WebClient.DownloadFile()</u> and <u>FileUpload.SaveAs()</u> methods for retrieving and saving item stock amounts. </td>
+            </tr>
+            <tr>
+                <td>Vivien Frances Pabuna</td>
+                <td>
+                    <u>Nutritional Information Service (E)</u>
+                    <br />Input: item name <br />Output: the nutritional information of the item as a string
+                </td>
+                <td>
+                    <span>
+                        <span>Allows customers to review item nutritional information prior to making their purchase.</span>
+                    </span>
+                </td>
+                <td>
+                    <a href="http://webstrar31.fulton.asu.edu/page3/NutritionalInfo">http://webstrar31.fulton.asu.edu/page3/NutritionalInfo</a>
+                </td>
+                <td>
+                    <span>
+                        <p dir="ltr"> The <u>FoodData Central API</u> will be used for retrieving nutritional information. </p>
+                        <a href="https://fdc.nal.usda.gov/api-guide.html#bkmk-1">
+                            <span>https://fdc.nal.usda.gov/api-guide.html#bkmk-1</span>
+                        </a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Jaylynne Jarrett</td>
+                <td>
+                    <u>Solar Energy Service (R)</u>
+                    <br />Input: Latitude/Longitude <br />Output: Information about solar viabilty
+                </td>
+                <td>
+                    <span>
+                        <span>Allows Owners to find a good position to place solar-powered vending machines.</span>
+                    </span>
+                </td>
+                <td>
+                    <a href="http://webstrar31.fulton.asu.edu/page0/">TryIt Link</a>
+                </td>
+                <td>
+                    <span>
+                        <p dir="ltr"> The <u>NREL Development API</u> will be used for retrieving solar information. </p>
+                        <a href="https://developer.nrel.gov/docs/solar/solar-resource-v1/#json-output-format">
+                            <span>API Link</span>
+                        </a>
+                    </span>
+                </td>
+            </tr>
+             <tr>
+                <td>Jaylynne Jarrett</td>
+                <td>
+                    <u>Crime Service (R)</u>
+                    <br />Input: State Abbreviation <br />Output: Information about area crime
+                </td>
+                <td>
+                    <span>
+                        <span>Allows Owners to find where crime is high (vending machines are in alleys afterall...)</span>
+                    </span>
+                </td>
+                <td>
+                    <a href="http://webstrar31.fulton.asu.edu/page0/">TryIt Link</a>
+                </td>
+                <td>
+                    <span>
+                        <p dir="ltr"> The <u>FBI Development API</u> will be used for retrieving crime information. </p>
+                        <a href="https://crime-data-explorer.fr.cloud.gov/pages/docApi">
+                            <span>API Link</span>
+                        </a>
+                    </span>
+                </td>
+            </tr>
+             <tr>
+                <td>Jaylynne Jarrett</td>
+                <td>
+                    <u>Pricing Model (E)</u>
+                    <br />Input: Str Food Item, Int Profit margin <br />Output: String validating update of information
+                </td>
+                <td>
+                    <span>
+                        <span>Allows Owners to set prices for items, default is msrp. Uses demand, profit margin, and a tax rate to calculate a viable price.</span>
+                    </span>
+                </td>
+                <td>
+                    <a href="http://webstrar31.fulton.asu.edu/page0/">TryIt Link</a>
+                </td>
+                <td>
+                    <span>
+                        <p dir="ltr"> Formulae on how to set price given a profit margin</p>
+                        
+                        </a>
+                    </span>
+                </td>
+            </tr>
+             <tr>
+                <td>Jaylynne Jarrett</td>
+                <td>
+                    <u>Pricing Model (E)</u>
+                    <br />Input: None <br />Output: String validating program ran successfully.
+                </td>
+                <td>
+                    <span>
+                        <span>Will restock vending machine items at the end of the day.</span>
+                    </span>
+                </td>
+                <td>
+                    <a href="http://webstrar31.fulton.asu.edu/page0/">TryIt Link</a>
+                </td>
+                <td>
+                    <span>
+                        <p dir="ltr"> A basic collection of order information.</p>
+                        
+                        </a>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

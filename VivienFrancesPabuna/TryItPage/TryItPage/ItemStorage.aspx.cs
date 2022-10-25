@@ -30,10 +30,10 @@ namespace Part4
         protected void Button2_Click(object sender, EventArgs e)
         {
             InventoryService.InvService prox = new InventoryService.InvServiceClient();
-            string input = this.TextBox1.Text;
+            string input = this.TextBox1.Text.ToString();
             string content = prox.UpdateQuantities(input);
             // Specifically denote that the result is displayed to avoid confusion.
-            this.ResultLabel.Text = content;
+            this.ResultLabel.Text = input;
         }
 
         // Placeholder method.

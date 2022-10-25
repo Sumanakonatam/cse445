@@ -22,10 +22,10 @@ namespace Part4.InventoryService {
         System.Threading.Tasks.Task<string> GetLatestQuantitiesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InvService/UpdateQuantities", ReplyAction="http://tempuri.org/InvService/UpdateQuantitiesResponse")]
-        bool UpdateQuantities(string data);
+        string UpdateQuantities(string data);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InvService/UpdateQuantities", ReplyAction="http://tempuri.org/InvService/UpdateQuantitiesResponse")]
-        System.Threading.Tasks.Task<bool> UpdateQuantitiesAsync(string data);
+        System.Threading.Tasks.Task<string> UpdateQuantitiesAsync(string data);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InvService/DecrementItemQuantity", ReplyAction="http://tempuri.org/InvService/DecrementItemQuantityResponse")]
         string DecrementItemQuantity(int itemNum, int amt);
@@ -75,11 +75,11 @@ namespace Part4.InventoryService {
             return base.Channel.GetLatestQuantitiesAsync();
         }
         
-        public bool UpdateQuantities(string data) {
+        public string UpdateQuantities(string data) {
             return base.Channel.UpdateQuantities(data);
         }
         
-        public System.Threading.Tasks.Task<bool> UpdateQuantitiesAsync(string data) {
+        public System.Threading.Tasks.Task<string> UpdateQuantitiesAsync(string data) {
             return base.Channel.UpdateQuantitiesAsync(data);
         }
         

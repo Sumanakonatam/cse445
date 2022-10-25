@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="HSWWoQ3PS40jahlggnJQI5q2VzzCIf3atL9gsRQ2SaI=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="R7ssQbegNbGg5rauFg5xwGhsQseznEzc7W9bnRbJx70=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_InvService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_InvService" contract="InventoryService.InvService" bindingType="basicHttpBinding" address="http://localhost:54503/InventoryService.svc" bindingConfiguration="BasicHttpBinding_InvService">
+    <endpoint name="BasicHttpBinding_InvService" contract="InventoryService.InvService" bindingType="basicHttpBinding" address="http://webstrar31.fulton.asu.edu/Page4/InventoryService.svc" bindingConfiguration="BasicHttpBinding_InvService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:54503/InventoryService.svc</serializedValue>
+          <serializedValue>http://webstrar31.fulton.asu.edu/Page4/InventoryService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
